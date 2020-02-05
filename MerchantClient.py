@@ -40,8 +40,6 @@ class MerchantService(object):
 
         pattern = reference_number + self.api_key
 
-        print pattern
-
         hash = self.generateHash(pattern)
 
         url = self.url(self.test)
@@ -96,14 +94,10 @@ class MerchantService(object):
         endpoint = "paga-webservices/merchant-rest/secured/getProcessDetails"
         data = {'processCode': process_code}
 
-        print data
 
         pattern = process_code + self.api_key
 
-        print pattern
-
         hash = self.generateHash(pattern)
-        print hash
 
         url = self.url(self.test)
         server_url = url + endpoint
@@ -130,14 +124,14 @@ class MerchantService(object):
         endpoint = "paga-webservices/merchant-rest/secured/getForeignExchangeRate"
         data = {'baseCurrency': base_currency, 'foreignCurrency': foreign_currency}
 
-        print data
+      
 
         pattern = base_currency + foreign_currency + self.api_key
 
-        print pattern
+       
 
         hash = self.generateHash(pattern)
-        print hash
+  
 
         url = self.url(self.test)
         server_url = url + endpoint
